@@ -37,25 +37,20 @@ This project was built to practice and understand:
 
 project-root/
 │
-├── index.html   # Main HTML structure
-├── style.css    # Complete styling + responsiveness
-├── script.js    # Player logic & interactivity
+├── index.html        # Main HTML structure
+├── style.css         # Complete styling & responsive design
+├── script.js         # Core player logic & UI interactivity
+├── songs.json        # Playlist manifest for GitHub/static hosting
 │
-├── images/      # Playlist thumbnail images
+├── images/           # Playlist thumbnail images
+├── SVGs/             # UI Icons (play, pause, volume, loop, etc.)
 │
-├── SVGs/        # Icons (play, pause, volume, loop, etc.)
-│
-└── songs/
-├── F1/
-│ ├── song1.mp3
-│ ├── song2.mp3
-│ └── ...
-├── F2/
-├── F3/
-├── F4/
-├── F5/
-└── F6/
-
+└── songs/            # Music library organized by playlist
+    ├── F1/           # Playlist 1 directory
+    │   ├── song1.mp3
+    │   └── song2.mp3
+    ├── F2/           # Playlist 2 directory
+    └── ...           # Folders F3 through F6
 
 Each `F*` folder represents a **playlist**.  
 Songs are discovered dynamically — no hardcoding of track names.
@@ -76,6 +71,25 @@ Songs are discovered dynamically — no hardcoding of track names.
 
 ---
 
+## ⚠️ Important Note on Playlist Loading
+
+This project supports **two different behaviors depending on how it is served**:
+
+### Local Development
+When run using a local development server (e.g. Live Server or `python -m http.server`), the player is able to automatically discover songs by reading playlist folders.  
+Adding a new audio file to a playlist directory makes it immediately available in the UI without any additional configuration.
+
+### GitHub Pages / Static Hosting
+On static hosting platforms such as GitHub Pages, directory listing is not supported.  
+As a result, automatic folder-based song discovery is not possible.
+
+To ensure compatibility with static hosting, playlist data is loaded from a **static JSON manifest (`songs.json`)**.  
+When adding new songs in this setup, the corresponding file paths must be added to `songs.json`.
+
+This is a limitation of static hosting and browser security models, not of the application logic itself.
+
+---
+
 ## 🖥 How to Run Locally
 
 This project requires a **local server** (due to usage of `fetch()`).
@@ -93,7 +107,6 @@ python -m http.server
 ```
 
 Then open: `http://localhost:8000`
-
 
 ---
 
