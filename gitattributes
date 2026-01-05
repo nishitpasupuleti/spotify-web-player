@@ -1,1 +1,7 @@
-*.js linguist-language=JavaScript
+# Ignore all CSS files from the language statistics
+*.css linguist-detectable=false
+*.css linguist-vendored
+
+# Ensure JavaScript and HTML are definitely counted
+*.js linguist-detectable=true
+*.html linguist-detectable=true
