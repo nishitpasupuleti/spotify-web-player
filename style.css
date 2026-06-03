@@ -1,440 +1,432 @@
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-  * {
-      margin: 0;
-      padding: 0;
-  }
-
-  body {
-      background-color: black;
-      color: white;
-      font-family: "Poppins", sans-serif;
-      overflow: hidden;
-  }
-
-  .header {
-      display: flex;
-      width: 100vw;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      gap: 7rem;
-  }
-
-  .header1 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 0.5rem 1.8rem;
-      gap: 0.5rem
-  }
-
-  .logo:hover {
-      cursor: pointer;
-  }
-
-  .header1 .home {
-      width: 1.5rem;
-      height: 1.5rem;
-      padding: 0.7rem;
-      background-color: #1f1f1f;
-      border-radius: 50%;
-  }
-
-  .header1 .home:hover {
-      cursor: pointer;
-      background-color: #2a2a2a;
-      transform: scale(1.05);
-  }
-
-  .header1 .search {
-      background-color: #1f1f1f;
-      font-size: 0.9rem;
-      color: rgb(179, 179, 179);
-      padding: 0.4rem 0.8rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.8rem;
-      border-radius: 500px;
-  }
-
-  .header1 .search:hover {
-      background-color: #2a2a2a;
-  }
-
-  .search .mg {
-      height: 1.5rem;
-      width: 1.5rem;
-  }
-
-  .search .browse {
-      height: 1.5rem;
-      width: 1.5rem;
-  }
-
-  .search .mg:hover,
-  .browse:hover {
-      cursor: pointer;
-  }
-
-  .header2 {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #b3b3b3;
-      gap: 1rem;
-  }
-
-  .header2 .psd {
-      font-weight: 600;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.5rem;
-      margin-right: 0.5rem;
-  }
-
-  .psd div:hover {
-      cursor: pointer;
-      color: white;
-      transform: scale(1.03);
-  }
-
-  .header2 .setup {
-      font-size: 0.9rem;
-      font-weight: 600;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      margin-left: 1.5rem;
-  }
-
-  .setup div:hover {
-      cursor: pointer;
-      color: white;
-      transform: scale(1.03);
-
-  }
-
-  .setup .login {
-      font-size: 0.95rem;
-      background-color: white;
-      color: black;
-      padding: 0.8rem 2rem;
-      border-radius: 500px;
-      margin-left: -0.7rem;
-  }
-
-  .setup .login:hover {
-      color: black;
-      background-color: #f5f5f5;
-  }
-
-  .middle {
-      display: flex;
-      gap: 7px;
-      padding: 0 7px;
-  }
-
-  .container {
-      background-color: #121212;
-      width: 72%;
-      border-radius: 10px;
-      padding: 2rem 2rem;
-      height: 75vh;
-      box-sizing: border-box;
-      overflow-y: auto;
-      overflow-x: hidden;
-      scrollbar-width: thin;
-      scrollbar-color: #2A2A2A #191414;
-
-  }
-
-  .playlists {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      width: 100%;
-      flex-wrap: wrap;
-      /* background-color: green; */
-  }
-
-  .box {
-      position: relative;
-      height: 16rem;
-      width: 11rem;
-      padding: 0.5rem;
-      border-radius: 5px;
-      background-color: #202020;
-      transition: transform 0.25s ease;
-      cursor: pointer;
-  }
-
-  .box img {
-      position: relative;
-      height: 11rem;
-      width: 11rem;
-  }
-
-  .dummy {
-      height: 17rem;
-      width: 12rem;
-  }
-
-  .info h3 {
-      font-weight: 600;
-  }
-
-  .info p {
-      font-size: 0.8rem;
-      margin-top: 8px;
-  }
-
-  .box:hover {
-      transform: scale(1.03);
-      background-color: #2A2A2A;
-  }
-
-  .playbtn {
-      position: absolute;
-      height: 2.75rem;
-      width: 2.75rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
-      background-color: #1DB954;
-      opacity: 0;
-      transform: translate(0);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      bottom: 26%;
-      right: 7%;
-  }
-
-  .box:hover .playbtn {
-      transform: translateY(-30px);
-      opacity: 1;
-
-  }
-
-  .box:hover .playbtn:hover {
-      background-color: #20C75F;
-      transform: translateY(-30px) scale(1.08);
-
-  }
-
-  .list {
-      background-color: #121212;
-      height: 70vh;
-      width: 25%;
-      border-radius: 10px;
-      padding: 1rem;
-      overflow-y: auto;
-      overflow-x: hidden;
-      scrollbar-width: thin;
-      scrollbar-color: #2A2A2A #191414;
-  }
-
-  .list .song {
-      position: relative;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      width: 100%;
-      height: 60px;
-      border: 0.1px solid white;
-      padding: 2px;
-      margin-bottom: 0.5rem;
-      border-radius: 5px;
-      cursor: pointer;
-  }
-
-  .list .song:hover {
-      border: 0.1px solid #1DB954;
-  }
-
-  .list .playnow {
-      font-size: 0.8rem;
-      position: absolute;
-      right: 1rem;
-  }
-
-  .list .playnow:hover {
-      text-decoration: solid underline;
-
-  }
-
-  .footer {
-      display: flex;
-      padding: 7px;
-      gap: 7px;
-  }
-
-  .cursongdisplay {
-      display: flex;
-      justify-content: flex-start;
-      font-weight: 600;
-      gap: 1rem;
-      align-items: center;
-      font-size: 1.25rem;
-      width: 27vw;
-      height: 5rem;
-      border-radius: 5px;
-  }
-
-
-  .playbar {
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: column;
-      align-content: center;
-      padding-top: 0.4rem;
-      width: 50vw;
-      height: 5rem;
-      border-radius: 5px;
-  }
-
-  .controls {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-
-  }
-
-  .controls .pausebtn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: white;
-      height: 2rem;
-      width: 2rem;
-      border-radius: 50%;
-      cursor: pointer;
-  }
-
-  .controls .pausebtn:hover {
-      transform: scale(1.05);
-  }
-
-  .controls .nextbtn,
-  .prevbtn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 2rem;
-      width: 2rem;
-      cursor: pointer;
-  }
-
-  .controls .nextbtn img:hover,
-  .prevbtn img:hover {
-      transform: scale(1.05);
-  }
-
-  .controls img {
-      height: 1rem;
-      width: 1rem;
-
-  }
-
-  .dus {
-      font-size: 0.8rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      /* background-color: black; */
-      width: 100%;
-  }
-
-  .playbar .seekbar {
-      height: 4px;
-      width: 80%;
-      border-radius: 2px;
-      background-color: #2a2a2a;
-      cursor: pointer;
-  }
-
-  .seekbar .fill {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 100%;
-      width: 0%;
-      border-radius: 2px;
-      background-color: white;
-  }
-
-  .vl {
-      /* background-color: aqua; */
-      height: 5rem;
-      width: 23vw;
-      border-radius: 5px;
-      display: flex;
-      justify-content: flex-start;
-      gap: 1.25rem;
-      align-items: center;
-      padding-left: 6rem;
-      box-sizing: border-box;
-  }
-
-  .vl img {
-      height: 1.25rem;
-      width: 1.25rem;
-      cursor: pointer;
-
-  }
-
-  .vl .volume {
-      width: 80%;
-      /* background-color: yellow; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-  }
-
-  .volume .vseekbar {
-      height: 4px;
-      width: 80%;
-      border-radius: 2px;
-      background-color: #2a2a2a;
-      cursor: pointer;
-  }
-
-  .vseekbar .vfill {
-      position: relative;
-      display: flex;
-      align-items: center;
-      height: 100%;
-      width: 100%;
-      border-radius: 2px;
-      background-color: white;
-  }
-
-  @media (max-width: 1357px) {
-      body {
-          overflow-y: auto;
-          overflow-x: hidden;
-      }
-
-      .header {
-          gap: 2rem;
-      }
-
-      .header .search {
-          width: 70%;
-      }
-
-      .container {
-          height: 79vh;
-      }
-  }
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* --- NAVBAR FIXES --- */
+.header {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 1.5rem; /* Pulled logo and right-side items inward */
+    gap: 1rem; /* Ensures items don't overlap */
+}
+
+.header1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1; /* Allows the center search area to flex */
+    max-width: 500px; /* Stops search bar from overflowing */
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.header1 .home {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.7rem;
+    background-color: #1f1f1f;
+    border-radius: 50%;
+}
+
+.header1 .home:hover {
+    cursor: pointer;
+    background-color: #2a2a2a;
+    transform: scale(1.05);
+}
+
+.header1 .search {
+    background-color: #1f1f1f;
+    font-size: 0.9rem;
+    color: rgb(179, 179, 179);
+    padding: 0.6rem 1rem;
+    display: flex;
+    justify-content: flex-start; /* Keeps text anchored to the left */
+    align-items: center;
+    gap: 0.8rem;
+    border-radius: 500px;
+    white-space: nowrap; 
+    overflow: hidden; /* CRITICAL: Traps the text inside the bubble */
+    text-overflow: ellipsis; /* Adds '...' if the screen gets too small */
+    flex: 1; 
+    min-width: 0; 
+}
+
+
+
+.header1 .search:hover {
+    background-color: #2a2a2a;
+}
+
+.search .mg, .search .browse {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.search .mg:hover,
+.browse:hover {
+    cursor: pointer;
+}
+
+.header2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #b3b3b3;
+    gap: 1rem;
+}
+
+.header2 .psd {
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 0.5rem;
+    white-space: nowrap; /* Prevents "Install App" from breaking */
+}
+
+.psd div:hover {
+    cursor: pointer;
+    color: white;
+    transform: scale(1.03);
+}
+
+.header2 .setup {
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem; /* Slightly reduced gap */
+}
+
+.setup div:hover {
+    cursor: pointer;
+    color: white;
+    transform: scale(1.03);
+}
+
+.setup .login {
+    font-size: 0.95rem;
+    background-color: white;
+    color: black;
+    padding: 0.7rem 2rem; /* Reduced top/bottom padding to fix swollen look */
+    border-radius: 9999px; /* Forces a perfect pill shape */
+    white-space: nowrap; /* Prevents "Log In" from breaking */
+}
+
+.setup .login:hover {
+    color: black;
+    background-color: #f5f5f5;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.middle {
+    display: flex;
+    gap: 7px;
+    padding: 0 7px;
+    flex: 1; 
+    overflow: hidden;
+}
+
+.list {
+    background-color: #121212;
+    width: 30%;
+    border-radius: 10px;
+    padding: 1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #2A2A2A #191414;
+    height: 100%; 
+}
+
+.list .song {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    height: 60px;
+    border: 0.1px solid transparent; /* Changed from white to transparent */
+    padding: 2px;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.list .song:hover {
+    border: 0.1px solid #1DB954;
+}
+
+.list .playnow {
+    font-size: 0.8rem;
+    position: absolute;
+    right: 1rem;
+}
+
+.list .playnow:hover {
+    text-decoration: underline;
+}
+
+.container {
+    background-color: #121212;
+    width: 75%;
+    border-radius: 10px;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: #2A2A2A #191414;
+    height: 100%; 
+}
+
+.playlists {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.box {
+    position: relative;
+    height: 16rem;
+    width: 11rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: #202020;
+    transition: transform 0.25s ease;
+    cursor: pointer;
+}
+
+.box img {
+    position: relative;
+    height: 11rem;
+    width: 11rem;
+}
+
+.info h3 {
+    font-weight: 600;
+}
+
+.info p {
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+.box:hover {
+    transform: scale(1.03);
+    background-color: #2A2A2A;
+}
+
+.playbtn {
+    position: absolute;
+    height: 2.75rem;
+    width: 2.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #1DB954;
+    opacity: 0;
+    transform: translate(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    bottom: 26%;
+    right: 7%;
+}
+
+.box:hover .playbtn {
+    transform: translateY(-30px);
+    opacity: 1;
+}
+
+.box:hover .playbtn:hover {
+    background-color: #20C75F;
+    transform: translateY(-30px) scale(1.08);
+}
+
+/* --- FOOTER / PLAYER FIXES --- */
+.footer {
+    display: flex;
+    justify-content: space-between; /* Creates the 3 distinct columns */
+    align-items: center;
+    padding: 0 1rem;
+    height: 5.5rem; /* Fixed height for the whole player */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.cursongdisplay {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 600;
+    gap: 1rem;
+    font-size: 1rem;
+    width: 30%; /* Column 1 */
+}
+
+.playbar {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 40%; /* Column 2 - Main controls get most space */
+    gap: 0.5rem;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.controls .pausebtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls .pausebtn:hover {
+    transform: scale(1.05);
+}
+
+.controls .nextbtn,
+.prevbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+.controls .nextbtn img:hover,
+.prevbtn img:hover {
+    transform: scale(1.05);
+}
+
+.controls img {
+    height: 1rem;
+    width: 1rem;
+}
+
+.dus {
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.playbar .seekbar {
+    height: 4px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 2px;
+    background-color: #4d4d4d;
+    cursor: pointer;
+}
+
+.seekbar .fill {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 30%; /* Example progress */
+    border-radius: 2px;
+    background-color: white;
+}
+
+.vl {
+    display: flex;
+    justify-content: flex-end; /* Pins loop/volume to right edge */
+    align-items: center;
+    gap: 1rem;
+    width: 30%; /* Column 3 */
+    padding-right: 1rem; /* Removed the awkward 6rem left padding */
+}
+
+.vl img {
+    height: 1.1rem;
+    width: 1.1rem;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.vl img:hover {
+    opacity: 1;
+}
+
+.vl .volume {
+    width: 150px; /* Increased from 100px to give it a proper length */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.volume .vseekbar {
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: #4d4d4d;
+    cursor: pointer;
+}
+
+.vseekbar .vfill {
+    position: relative;
+    height: 100%;
+    width: 70%; /* Example volume level */
+    border-radius: 2px;
+    background-color: white;
+}
+
+@media (max-width: 1357px) {
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .header {
+        gap: 2rem;
+    }
+
+    .container {
+        width: 100%; /* Adjust if sidebar hides */
+    }
+}
 
   @media (max-width: 1024px) {
 
